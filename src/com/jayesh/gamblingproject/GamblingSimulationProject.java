@@ -23,6 +23,8 @@ public class GamblingSimulationProject {
 	
 	public static void gamePlay() {
 		
+			while(true) {
+				gameStatus();
 				Random random = new Random();
 				playStatus = random.nextInt(9) % 2;
 				System.out.println("Play Status = "+ playStatus);
@@ -36,14 +38,22 @@ public class GamblingSimulationProject {
 					winStack += 1;
 				
 				}
+				if(winStack == STACK_PER_DAY / 2) {
+					
+					break;
+				}
+				if(looseStack == STACK_PER_DAY /2){
+					
+					break;
+				}
+			}
 		}		
-	
+			
 	public static void main(String[] args) {
 		
 		System.out.println("Welcome to Gambling Simulation problem Developed by Jayesh Sonar.");
 		
-		gameStatus();
 		gamePlay();
-		gameStatus();
+		
 	}
 }
