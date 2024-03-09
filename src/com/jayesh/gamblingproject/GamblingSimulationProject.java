@@ -1,6 +1,6 @@
 package com.jayesh.gamblingproject;
-
 import java.util.Random;
+import java.util.Scanner;
 
 public class GamblingSimulationProject {
 	
@@ -14,6 +14,7 @@ public class GamblingSimulationProject {
 	
 	private static final int[] won_Maximum = new int[20];
 	private static final int[] lost_Maximum = new int[20];
+	private static final char Yes = 0;
 	
 	private static int total_Win_Day = 0;
 	private static int total_Loose_Day = 0;
@@ -23,6 +24,7 @@ public class GamblingSimulationProject {
 	static int maxLoose = 0;
 	static int winIndex = 0;
 	static int looseIndex = 0;
+	static int userChoise;
 	
 	public static void gameStatus() {
 		
@@ -35,6 +37,8 @@ public class GamblingSimulationProject {
 		
 		
 		gameStatus();
+		
+		do {
 		for(int i=0; i<20; i++) {
 				
 			System.out.println("Day = "+ (i+1));
@@ -102,13 +106,18 @@ public class GamblingSimulationProject {
 			System.out.println("Total Loose Day Month = "+ total_Loose_Day);
 			System.out.println(looseIndex + " is the UnLuckiest Day, Lost Rs : "+ maxLoose);
 			
+			Scanner scanner = new Scanner(System.in);
+			System.out.println("Do You Continue Playing_Game Enter (Yes- 1) / (No- 2)");
+			userChoise = scanner.nextInt();
+		 	System.out.println(userChoise);
+			
+		}while(userChoise == 1);
+		
 	}		
 			
 	public static void main(String[] args) {
 		
 			System.out.println("Welcome to Gambling Simulation problem Developed by Jayesh Sonar.");
-		
 			gamePlay();
-			
 		}
 }
